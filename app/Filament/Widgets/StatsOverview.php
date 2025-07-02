@@ -28,11 +28,11 @@ class StatsOverview extends BaseWidget
             Stat::make('New Listing Of The Month', $newListing),
             Stat::make('Transaction Of the Month', $Transaction->count())
             ->description($TransactionPercentage > 0 ? "{$TransactionPercentage}% Increased" : "{$TransactionPercentage}% Decreased" )
-            ->descriptionIcon($TransactionPercentage > 0 ? 'heroicon-m-arrow-trending-up' : 'heroicon-m-trending-down' )
+            ->descriptionIcon($TransactionPercentage > 0 ? 'heroicon-m-arrow-trending-up' : 'heroicon-m-arrow-trending-down' )
             ->color($TransactionPercentage > 0 ? 'success' : 'danger' ),
             Stat::make('Revenue Of the Month', '$' . number_format($Transaction->sum('total_price'), 2))
     ->description($revenuePercentage > 0 ? "{$revenuePercentage}% Increased" : "{$revenuePercentage}% Decreased")
-    ->descriptionIcon($revenuePercentage > 0 ? 'heroicon-m-arrow-trending-up' : 'heroicon-m-trending-down')
+    ->descriptionIcon($revenuePercentage > 0 ? 'heroicon-m-arrow-trending-up' : 'heroicon-m-arrow-trending-down')
     ->color($revenuePercentage > 0 ? 'success' : 'danger'),
         ];
     }
